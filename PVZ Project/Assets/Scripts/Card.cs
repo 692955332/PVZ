@@ -19,8 +19,11 @@ public class Card : MonoBehaviour
     public GameObject cardGray;
     public Image cardMask;
 
-    public float cdTime = 2f; //冷却时间
-    public float cdTimer = 0f; //冷却时间最大值
+    [SerializeField]
+    private float cdTime = 2f; //冷却时间
+    private float cdTimer = 0f; //冷却时间最大值
+    [SerializeField]
+    public int needSunPoint = 50; //阳光消耗
 
     private void Update()
     {
@@ -55,7 +58,10 @@ public class Card : MonoBehaviour
     }
     private void WaitingSunUpdate()
     {
-        throw new NotImplementedException();
+        if (needSunPoint <= SunManager.Instance.SunPoint)
+        {
+            TransitionToReady();
+        }
     }
     private void ReadyUpdate()
     {
@@ -69,6 +75,12 @@ public class Card : MonoBehaviour
         cardGray.SetActive(true);
         cardMask.gameObject.SetActive(false);
     } 
-
+    void TransitionToReady()
+    {
+        cardState = CardState.Ready;
+        cardLight.SetActive(true);
+        cardGray.SetActive(false);
+        cardMask.gameObject.SetActive(false);
+    }
 
 }
