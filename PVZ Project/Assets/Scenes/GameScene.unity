@@ -728,9 +728,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 31240044}
     m_Modifications:
+    - target: {fileID: 1583959246974129574, guid: 0ffd981d871618949896d13653127990, type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583959246974129574, guid: 0ffd981d871618949896d13653127990, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1967000098711385590, guid: 0ffd981d871618949896d13653127990, type: 3}
       propertyPath: m_Name
       value: CardTemplate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568072534976834562, guid: 0ffd981d871618949896d13653127990, type: 3}
+      propertyPath: m_Name
+      value: CardMask
       objectReference: {fileID: 0}
     - target: {fileID: 8741758890750355227, guid: 0ffd981d871618949896d13653127990, type: 3}
       propertyPath: m_Pivot.x
@@ -815,13 +827,58 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1967000098711385590, guid: 0ffd981d871618949896d13653127990, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6432696314742824142}
   m_SourcePrefab: {fileID: 100100000, guid: 0ffd981d871618949896d13653127990, type: 3}
 --- !u!224 &6432696314742824137 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8741758890750355227, guid: 0ffd981d871618949896d13653127990, type: 3}
   m_PrefabInstance: {fileID: 6432696314742824136}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6432696314742824138 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1583959246974129574, guid: 0ffd981d871618949896d13653127990, type: 3}
+  m_PrefabInstance: {fileID: 6432696314742824136}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6432696314742824139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7863882782502657385, guid: 0ffd981d871618949896d13653127990, type: 3}
+  m_PrefabInstance: {fileID: 6432696314742824136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6432696314742824140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5331703619639672573, guid: 0ffd981d871618949896d13653127990, type: 3}
+  m_PrefabInstance: {fileID: 6432696314742824136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6432696314742824141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1967000098711385590, guid: 0ffd981d871618949896d13653127990, type: 3}
+  m_PrefabInstance: {fileID: 6432696314742824136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6432696314742824142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432696314742824141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ecb169c87a1bc344a09f5c3247e3ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardLight: {fileID: 6432696314742824140}
+  cardGray: {fileID: 6432696314742824139}
+  cardMask: {fileID: 6432696314742824138}
+  cdTime: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
