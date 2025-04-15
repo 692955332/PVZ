@@ -21,7 +21,7 @@ public class Card : MonoBehaviour
 
     [SerializeField]
     private float cdTime = 2f; //冷却时间
-    private float cdTimer = 0f; //冷却时间最大值
+    private float cdTimer = 0f; //冷却计时器
     [SerializeField]
     public int needSunPoint = 50; //阳光消耗
 
@@ -65,7 +65,11 @@ public class Card : MonoBehaviour
     }
     private void ReadyUpdate()
     {
-        throw new NotImplementedException();
+        if (needSunPoint > SunManager.Instance.SunPoint)
+        {
+            TransitionToWaitingSun();
+        }
+
     }
 
     void TransitionToWaitingSun()
@@ -81,6 +85,22 @@ public class Card : MonoBehaviour
         cardLight.SetActive(true);
         cardGray.SetActive(false);
         cardMask.gameObject.SetActive(false);
+    }
+    public void TransitionToCooling()
+    {
+        cardState = CardState.Cooling;
+        cdTimer = 0f;
+        cardLight.SetActive(false);
+        cardGray.SetActive(true);
+        cardMask.gameObject.SetActive(true);
+
+    }
+
+    public void OnClick()
+    {
+        if(needSunPoint > SunManager.Instance.SunPoint) return;
+        //TODO:消耗阳光，进行种植
+        TransitionToCooling();
     }
 
 }
