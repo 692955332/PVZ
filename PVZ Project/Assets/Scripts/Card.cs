@@ -12,7 +12,6 @@ enum CardState
 }
 public class Card : MonoBehaviour
 {
-    //ÀäÈ´ ¿ÉÒÔ±»µã»÷ ²»¿ÉÓÃ
     private CardState cardState = CardState.Cooling;
 
     public GameObject cardLight;
@@ -20,25 +19,22 @@ public class Card : MonoBehaviour
     public Image cardMask;
 
     [SerializeField]
-    private float cdTime = 2f; //ÀäÈ´Ê±¼ä
-    private float cdTimer = 0f; //ÀäÈ´¼ÆÊ±Æ÷
+    private float cdTime = 2f;
+    private float cdTimer = 0f; 
     [SerializeField]
-    public int needSunPoint = 50; //Ñô¹âÏûºÄ
+    public int needSunPoint = 50; 
 
     private void Update()
     {
         switch(cardState)
         {
             case CardState.Cooling:
-                //ÀäÈ´ÖĞ
                 CoolingUpdate();
                 break;
             case CardState.WaitingSun:
-                //µÈ´ıÑô¹â
                 WaitingSunUpdate();
                 break;
             case CardState.Ready:
-                //×¼±¸ºÃ
                 ReadyUpdate();
                 break;
             default:
@@ -99,7 +95,8 @@ public class Card : MonoBehaviour
     public void OnClick()
     {
         if(needSunPoint > SunManager.Instance.SunPoint) return;
-        //TODO:ÏûºÄÑô¹â£¬½øĞĞÖÖÖ²
+        //TODOï¼šè¿›è¡Œç§æ¤
+        SunManager.Instance.SubSun(needSunPoint);
         TransitionToCooling();
     }
 
