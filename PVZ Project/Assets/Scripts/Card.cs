@@ -10,9 +10,17 @@ enum CardState
     WaitingSun,
     Ready,
 }
+
+public enum PlantType
+{
+    Sunflower,
+    PeaShooter,
+}
+
 public class Card : MonoBehaviour
 {
     private CardState cardState = CardState.Cooling;
+    public PlantType plantType = PlantType.Sunflower;
 
     public GameObject cardLight;
     public GameObject cardGray;
@@ -96,6 +104,7 @@ public class Card : MonoBehaviour
     {
         if(needSunPoint > SunManager.Instance.SunPoint) return;
         //TODO：进行种植
+        HandManager.Instance.AddPlant(plantType);
         SunManager.Instance.SubSun(needSunPoint);
         TransitionToCooling();
     }
