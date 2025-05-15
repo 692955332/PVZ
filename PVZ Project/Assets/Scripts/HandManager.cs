@@ -58,4 +58,14 @@ public class HandManager : MonoBehaviour
         currentPlant.transform.position = mouseWordPosition;
         
     }
+
+    public void OnCellClick(Cell cell)
+    {
+        if (currentPlant == null)return;
+        bool isSuccess = cell.AddPlant(currentPlant);
+        if (isSuccess)
+        {
+            currentPlant = null;
+        }
+    }
 }
