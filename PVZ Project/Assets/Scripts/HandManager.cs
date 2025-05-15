@@ -25,14 +25,17 @@ public class HandManager : MonoBehaviour
         FollowCursor();
     }
 
-    public void AddPlant(PlantType plantType)
+    public bool AddPlant(PlantType plantType)
     {
+        if (currentPlant != null) return false;
         Plant plantPrefab = GetPlantPrefab(plantType);
         if (plantPrefab == null)
         {
             print("要种植的植物不存在");
+            return false;
         }
         currentPlant = GameObject.Instantiate(plantPrefab);
+        return true;
     }
 
     private Plant GetPlantPrefab(PlantType plantType)

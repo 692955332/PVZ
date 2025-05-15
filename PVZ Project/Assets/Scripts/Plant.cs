@@ -12,7 +12,7 @@ public class Plant : MonoBehaviour
     public PlantType plantType = PlantType.Sunflower;
     void Start()
     {
-        
+        TransitionToDisable();
     }
     
     void Update()
@@ -38,5 +38,11 @@ public class Plant : MonoBehaviour
     void EnableUpdate()
     {
         
+    }
+
+    void TransitionToDisable()
+    {
+        plantState = PlantState.Disable;
+        GetComponent<Animator>().enabled = false;
     }
 }

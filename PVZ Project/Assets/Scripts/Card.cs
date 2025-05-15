@@ -103,10 +103,12 @@ public class Card : MonoBehaviour
     public void OnClick()
     {
         if(needSunPoint > SunManager.Instance.SunPoint) return;
-        //TODO：进行种植
-        HandManager.Instance.AddPlant(plantType);
-        SunManager.Instance.SubSun(needSunPoint);
-        TransitionToCooling();
+        bool isSuccess =  HandManager.Instance.AddPlant(plantType);
+        if (isSuccess)
+        {
+            SunManager.Instance.SubSun(needSunPoint);
+            TransitionToCooling();
+        }
     }
 
 }
