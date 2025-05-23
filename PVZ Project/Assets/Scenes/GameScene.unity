@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantPrefabList:
-  - {fileID: 3253923621532813535, guid: d980857c0c8b35a47a242d2d5e40ce99, type: 3}
+  - {fileID: 5847762182904403416, guid: d980857c0c8b35a47a242d2d5e40ce99, type: 3}
 --- !u!4 &314298041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 476522315477247556, guid: af98c9a48c05d2f4787122c2f367e529, type: 3}
