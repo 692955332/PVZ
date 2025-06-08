@@ -104,6 +104,8 @@ MonoBehaviour:
   plantType: 0
   produceDuration: 5
   sunPrefab: {fileID: 2961397097113523594, guid: d9afe067278177b4f9f083dc65713421, type: 3}
+  jumpMinDistance: 0.3
+  jumpMaxDistance: 1.5
 --- !u!95 &4811383530965477891
 Animator:
   serializedVersion: 7

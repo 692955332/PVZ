@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ public class SunManager : MonoBehaviour
     [SerializeField]
     private int sunPoint;
     public TextMeshProUGUI sunPointText;
+    public float produceTime;
+    private float produceTimer;
+    
     private void Awake()
     {
         Instance = this;
@@ -21,6 +25,12 @@ public class SunManager : MonoBehaviour
     {
         get { return sunPoint; }
     }
+
+    private void Update()
+    {
+        ProduceSun();
+    }
+
     private void UpdateSunPointText()
     {
         sunPointText.text = sunPoint.ToString();
@@ -29,6 +39,15 @@ public class SunManager : MonoBehaviour
     {
         sunPoint -= point;
         UpdateSunPointText();
+    }
 
+    void ProduceSun()
+    {
+        produceTimer += Time.deltaTime;
+        if (produceTimer >= produceTime)
+        {
+            produceTimer = 0;
+            
+        }
     }
 }
