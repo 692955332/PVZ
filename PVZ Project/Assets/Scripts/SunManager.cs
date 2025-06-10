@@ -11,6 +11,7 @@ public class SunManager : MonoBehaviour
     public TextMeshProUGUI sunPointText;
     public float produceTime;
     private float produceTimer;
+    private Vector3 sunPointTextPosition;
     
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class SunManager : MonoBehaviour
     {
         sunPoint = 0;
         UpdateSunPointText();
+        CalcSunPointTextPosition();
     }
     public int SunPoint
     {
@@ -41,6 +43,12 @@ public class SunManager : MonoBehaviour
         UpdateSunPointText();
     }
 
+    public void AddSun(int point)
+    {
+        sunPoint += point;
+        UpdateSunPointText();
+    }
+
     void ProduceSun()
     {
         produceTimer += Time.deltaTime;
@@ -49,5 +57,17 @@ public class SunManager : MonoBehaviour
             produceTimer = 0;
             
         }
+    }
+
+    public Vector3 GetSunPointTextPosition()
+    {
+        return sunPointTextPosition;
+    }
+
+    private void CalcSunPointTextPosition()
+    {
+        Vector3 position = Camera.main.ScreenToWorldPoint(sunPointText.transform.position);
+        position.z = 0;
+        sunPointTextPosition = position;
     }
 }

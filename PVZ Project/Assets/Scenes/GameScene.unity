@@ -636,6 +636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sunPoint: 0
   sunPointText: {fileID: 183221511}
+  produceTime: 0
 --- !u!4 &308896955
 Transform:
   m_ObjectHideFlags: 0
@@ -4384,7 +4385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3773321029965287012, guid: d9afe067278177b4f9f083dc65713421, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3773321029965287012, guid: d9afe067278177b4f9f083dc65713421, type: 3}
       propertyPath: m_LocalRotation.w
